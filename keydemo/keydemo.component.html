@@ -1,0 +1,22 @@
+<p>keydemo works!</p>
+<!----<h1 onselect="return false" onselectstart="return false" oncontextmenu="return false"></h1> -->
+<div class="container">
+    <h1>register user</h1>
+    <div class="form-group">
+        <label>user Name</label>
+        <input (keyup) = "verifyName()" [(ngModel)]="userName" type="text" placeholder="username" class="form-control">
+        <span class="text-success" *ngIf="msg =='Available'">{{msg}}</span>
+        <span class="text-danger" *ngIf="msg !=='Available'">{{msg}}</span>
+
+    </div>
+    <div class="form-group">
+          <label>password</label>
+          <input (keypress)="CheckCaps($event)" (keyup)="verifypassword() " placeholder="4 to 15 char with atleast 1 uppercase letter"
+          [(ngModel)]="userPassword" type="text" class="form-control">
+          <meter [min]="min" [max]="max" [value]="value" [low]= "low" [high]="high"></meter>
+          <span>{{ pwdMsg}}</span>
+          <div class="text-center">
+            {{capsMsg}}
+          </div>
+        </div>
+    </div>

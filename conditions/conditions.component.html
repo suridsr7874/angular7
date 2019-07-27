@@ -1,0 +1,29 @@
+<p class="bg-success text-center">conditions works!</p>
+<div class="container">
+    <fieldset>
+        <legend class="text-danger">filter products</legend>
+        <select [(ngModel)] = "optFilter" class="form-control">
+            <option class="bg-warning">All</option>
+            <option class=" bg-success">electronics</option>
+            <option class=" bg-primary ">shoes</option>
+            <option class=" bg-danger">shirts</option>
+        </select>
+    </fieldset>
+    <h2 class="text-warning">product list</h2>
+    <table class="table table-hover">
+        <thead>
+            <th class="text-danger">Name</th>
+            <th class="text-primary">Price</th>
+            <th class="text-warning">category</th>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let product of products">
+                <tr *ngIf = "optFilter == 'All' || optFilter == product.category">
+                    <td class="bg-warning">{{product.name}}</td>
+                    <td class="bg-primary">{{product.price}}</td>
+                    <td class="bg-success">{{product.category}}</td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>

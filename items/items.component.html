@@ -1,0 +1,83 @@
+<p>items works!</p>
+<section class="p-3">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table table-border">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Descrition</th>
+                            <th>Quntity</th>
+                            <th>Cost (&#8377;)</th>
+                            <th>Total (&#8377;)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <button class="btn  " ng-click="deleteitems[$index]">
+                                    <i class="fa fa-window-close fa-2x"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" ng-Model="item.Descrition">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" ng-Model="item.qty">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" ng-Model="item.Cost">
+                                </div>
+                            <td>
+                                <span>{{ item.qty * item.cost | currency : '&#8377;'}}</span>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="btn btn-primary btn-sm" ng-click="addItem()" ng-show="editInvoice">
+                                    <i class="fa fa-plus-circle fa-2x"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>sub total</td>
+                            <td>
+                                <span>{{ subTotal()  | currency : '&#8377;'}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>gst(%)
+                                <input ng-model="invoice.gst" type="number" class="form-control ml-2">
+                            </td>
+                            <td>
+                                <span>{{ addGST()  | currency : '&#8377;'}}</span>
+                            </td>
+                        </tr>
+                        <tr class="bg-light">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Grand Total</td>
+                            <td>
+                                <span>{{ grandTotal() | currency : '&#8377;'}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,25 @@
+<p>classdemo works!</p>
+
+<fieldset>
+    <!-- <legend>validate name</legend>
+    <input [ngClass]="{'error-Effects':userName.invalid, validEffects:userName.valid}"
+    name="userName" #userName="ngModel" ngModel type="text" pattern="[A-Z]{4,10}" required>
+    </fieldset> -->
+    <fieldset>
+        <legend>apply effects</legend>
+        <input [(ngModel)]="effects" type="text" size="40" placeholder="eg:backEffects, textEffects, borderEffects">
+        <h2 [(ngClass)]="effects">welcome to angular</h2>
+    <fieldset>
+    <!-- <legend>choose effects</legend>
+    <ol>
+        <li><input [(ngModel)]="IsBack" type="checkBox">texteffects</li>
+        <li><input [(ngModel)]="IsText" type="checkBox">backeffects</li>
+        <li><input [(ngModel)]="IsBorder" type="checkBox">bordereffects</li>
+    </ol> -->
+    </fieldset>
+  
+    <!-- <h2 [ngClass]="{backEffects:IsBack, textEffects:IsText, borderEffects:IsBorder}">Sample text</h2> -->
+
+    <!-- <h2>Color effects</h2>
+    <input [(ngModel)]="effects" type="text" size="24">
+    <h1 [(ngClass)]="effects">Suri dsr</h1> -->

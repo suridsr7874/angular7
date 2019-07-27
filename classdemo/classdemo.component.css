@@ -1,0 +1,15 @@
+.backEffects{
+    background-color: blue;
+}
+.textEffects{
+    color: orangered;
+}
+.borderEffects{
+    border: 2px aqua dotted;
+}
+.error-Effects {
+    border: 2px red solid;
+}
+.validEffects{
+    border: 2px green solid;
+}
